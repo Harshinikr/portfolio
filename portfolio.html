@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Harshini KR | Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f3ef;
+  --bg2:#faf9f6;
+  --white:#ffffff;
+  --ink:#1a1a2e;
+  --ink2:#4a4a6a;
+  --ink3:#8a8aaa;
+  --teal:#0d9488;
+  --teal-light:#ccfbf1;
+  --teal-mid:#5eead4;
+  --coral:#e85d4a;
+  --coral-light:#fef2f0;
+  --indigo:#4f46e5;
+  --indigo-light:#eef2ff;
+  --amber:#d97706;
+  --amber-light:#fffbeb;
+  --rose:#e11d48;
+  --rose-light:#fff1f2;
+  --violet:#7c3aed;
+  --violet-light:#f5f3ff;
+  --border:#e8e4dc;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08),0 12px 40px rgba(0,0,0,0.06);
+  --r:14px;--r-sm:8px;--r-lg:20px;--r-xl:28px;
+  --font-d:'Fraunces',serif;
+  --font-b:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:15px;line-height:1.7;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ─── NAV ─── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(245,243,239,0.88);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--teal);letter-spacing:-0.01em}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{font-size:0.82rem;font-weight:600;color:var(--ink2);letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:0.38rem 1rem;border-radius:100px;font-size:0.78rem!important;transition:opacity 0.2s!important}
+.nav-cta:hover{opacity:0.85}
+
+/* ─── LAYOUT ─── */
+.page{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 58px);max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem;gap:2rem}
+
+/* ─── SIDEBAR ─── */
+.sidebar{position:sticky;top:78px;height:fit-content}
+.profile-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  padding:2rem 1.5rem;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.avatar-wrap{
+  position:relative;width:100px;height:100px;
+  margin:0 auto 1.25rem;
+}
+.avatar-ring{
+  width:100px;height:100px;border-radius:50%;
+  background:linear-gradient(135deg,#0d9488,#4f46e5,#e85d4a);
+  padding:3px;
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar-inner{
+  width:94px;height:94px;border-radius:50%;
+  background:linear-gradient(135deg,#ccfbf1 0%,#ddd6fe 50%,#fef2f0 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--teal);
+}
+.avail-dot{
+  position:absolute;bottom:6px;right:6px;
+  width:18px;height:18px;border-radius:50%;
+  background:#22c55e;border:3px solid var(--white);
+}
+.profile-name{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;letter-spacing:-0.02em}
+.profile-role{font-size:0.78rem;font-weight:600;color:var(--teal);margin-bottom:0.2rem;text-transform:uppercase;letter-spacing:0.06em}
+.profile-loc{font-size:0.8rem;color:var(--ink3);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:4px}
+.sidebar-divider{height:1px;background:var(--border);margin:1.25rem 0}
+.sidebar-section-title{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink3);margin-bottom:0.75rem;text-align:left}
+.profile-links{display:flex;justify-content:center;gap:0.6rem;margin-bottom:1.25rem}
+.social-btn{
+  width:38px;height:38px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;border:1px solid var(--border);background:var(--bg);
+  transition:border-color 0.2s,transform 0.15s,background 0.2s;
+}
+.social-btn:hover{border-color:var(--teal);background:var(--teal-light);transform:translateY(-2px)}
+.quick-stats{display:flex;flex-direction:column;gap:0.6rem;text-align:left}
+.qstat{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0.75rem;background:var(--bg);border-radius:var(--r-sm)}
+.qstat-label{font-size:0.75rem;color:var(--ink3);font-weight:500}
+.qstat-val{font-size:0.82rem;font-weight:700;color:var(--teal)}
+.resume-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:0.75rem;
+  background:var(--teal);color:#fff;
+  border-radius:100px;font-weight:700;font-size:0.85rem;
+  margin-top:1.25rem;
+  transition:opacity 0.2s,transform 0.15s;
+  box-shadow:0 4px 14px rgba(13,148,136,0.3);
+}
+.resume-btn:hover{opacity:0.88;transform:translateY(-1px)}
+
+/* ─── MAIN CONTENT ─── */
+main{min-width:0}
+
+/* ─── HERO BANNER ─── */
+.hero-banner{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  padding:2.5rem 2.5rem 2rem;
+  margin-bottom:1.5rem;
+  box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.hero-banner::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,148,136,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:'';position:absolute;bottom:-60px;left:30%;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,70,229,0.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-greeting{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem}
+.wave{font-size:1.5rem;animation:wave 2s infinite}
+@keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(20deg)}75%{transform:rotate(-10deg)}}
+.hero-greeting-text{font-size:0.85rem;color:var(--ink3);font-weight:500}
+.hero-title{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--ink);line-height:1.15;letter-spacing:-0.03em;margin-bottom:0.35rem}
+.hero-title span{color:var(--teal)}
+.hero-sub{font-size:0.88rem;font-weight:600;color:var(--indigo);margin-bottom:1rem;letter-spacing:0.02em}
+.hero-summary{font-size:0.92rem;color:var(--ink2);line-height:1.8;max-width:640px;margin-bottom:1.5rem}
+.hero-summary strong{color:var(--ink);font-weight:700}
+.hero-badges{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.75rem}
+.hbadge{
+  display:flex;align-items:center;gap:5px;
+  padding:0.3rem 0.75rem;border-radius:100px;
+  font-size:0.75rem;font-weight:700;
+  letter-spacing:0.03em;
+}
+.hbadge.teal{background:var(--teal-light);color:var(--teal);border:1px solid rgba(13,148,136,0.2)}
+.hbadge.indigo{background:var(--indigo-light);color:var(--indigo);border:1px solid rgba(79,70,229,0.2)}
+.hbadge.coral{background:var(--coral-light);color:var(--coral);border:1px solid rgba(232,93,74,0.2)}
+.hbadge.amber{background:var(--amber-light);color:var(--amber);border:1px solid rgba(217,119,6,0.2)}
+.hbadge.violet{background:var(--violet-light);color:var(--violet);border:1px solid rgba(124,58,237,0.2)}
+.hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;opacity:0.7}
+.hero-stats-row{display:flex;gap:0;border-top:1px solid var(--border);padding-top:1.25rem;flex-wrap:wrap}
+.hstat{flex:1;min-width:100px;padding:0 1.25rem;border-right:1px solid var(--border)}
+.hstat:first-child{padding-left:0}
+.hstat:last-child{border-right:none}
+.hstat-num{font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--teal);line-height:1}
+.hstat-label{font-size:0.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:0.07em;margin-top:2px}
+
+/* ─── SECTION CARDS ─── */
+.section-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  padding:2rem 2rem 1.5rem;
+  margin-bottom:1.5rem;
+  box-shadow:var(--shadow);
+}
+.section-head{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem}
+.section-icon{width:38px;height:38px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.section-icon.exp{background:linear-gradient(135deg,#ccfbf1,#a7f3d0)}
+.section-icon.skills{background:linear-gradient(135deg,#eef2ff,#ddd6fe)}
+.section-icon.proj{background:linear-gradient(135deg,#fef2f0,#fde8e4)}
+.section-icon.edu{background:linear-gradient(135deg,#fffbeb,#fde68a)}
+.section-title-text{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
+
+/* ─── EXPERIENCE ─── */
+.exp-list{display:flex;flex-direction:column;gap:1px}
+.exp-item{
+  border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;margin-bottom:0.75rem;
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.exp-item:hover{border-color:var(--teal-mid);box-shadow:0 2px 12px rgba(13,148,136,0.08)}
+.exp-header-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;cursor:pointer;gap:1rem;
+}
+.exp-left{display:flex;align-items:center;gap:0.75rem}
+.exp-logo{
+  width:40px;height:40px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;border:1px solid var(--border);
+}
+.exp-title-block{}
+.exp-role-name{font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:1px}
+.exp-company-name{font-size:0.78rem;color:var(--ink3);font-weight:500}
+.exp-right{display:flex;align-items:center;gap:0.75rem;flex-shrink:0}
+.exp-date-badge{
+  font-size:0.72rem;font-weight:700;
+  color:var(--teal);background:var(--teal-light);
+  border:1px solid rgba(13,148,136,0.18);
+  padding:0.22rem 0.65rem;border-radius:100px;white-space:nowrap;
+}
+.exp-chevron{font-size:0.7rem;color:var(--ink3);transition:transform 0.3s}
+.exp-item.open .exp-chevron{transform:rotate(180deg)}
+.exp-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.35s ease,padding 0.3s;
+  padding:0 1.25rem;
+}
+.exp-item.open .exp-body{max-height:600px;padding:0 1.25rem 1.25rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1rem}
+.exp-bullets li{font-size:0.85rem;color:var(--ink2);padding-left:1.2rem;position:relative;line-height:1.65}
+.exp-bullets li::before{content:'▹';position:absolute;left:0;color:var(--teal);font-size:0.7rem;top:0.18rem}
+.exp-bullets strong{color:var(--ink);font-weight:700}
+.exp-pills{display:flex;flex-wrap:wrap;gap:5px}
+.pill{
+  font-size:0.7rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:100px;
+  border:1px solid;
+}
+.pill.teal{background:var(--teal-light);color:var(--teal);border-color:rgba(13,148,136,0.2)}
+.pill.indigo{background:var(--indigo-light);color:var(--indigo);border-color:rgba(79,70,229,0.2)}
+.pill.coral{background:var(--coral-light);color:var(--coral);border-color:rgba(232,93,74,0.15)}
+.pill.amber{background:var(--amber-light);color:var(--amber);border-color:rgba(217,119,6,0.2)}
+.pill.violet{background:var(--violet-light);color:var(--violet);border-color:rgba(124,58,237,0.2)}
+.pill.rose{background:var(--rose-light);color:var(--rose);border-color:rgba(225,29,72,0.15)}
+
+/* ─── SKILLS ─── */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.skill-block{border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.25rem;transition:border-color 0.2s}
+.skill-block:hover{border-color:var(--teal-mid)}
+.skill-block-head{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem}
+.skill-block-icon{font-size:1rem}
+.skill-block-name{font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink2)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:5px}
+
+/* ─── PROJECTS ─── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.proj-card{
+  border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+  transition:border-color 0.25s,transform 0.2s,box-shadow 0.2s;
+}
+.proj-card:hover{border-color:var(--teal-mid);transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,148,136,0.1)}
+.proj-img{height:130px;overflow:hidden;position:relative}
+.proj-img-bg{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5rem;
+}
+.proj-img-bg.c1{background:linear-gradient(135deg,#ccfbf1 0%,#99f6e4 50%,#5eead4 100%)}
+.proj-img-bg.c2{background:linear-gradient(135deg,#eef2ff 0%,#ddd6fe 50%,#c4b5fd 100%)}
+.proj-body{padding:1.1rem}
+.proj-type{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.4rem}
+.proj-name{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.proj-desc{font-size:0.8rem;color:var(--ink2);line-height:1.65;margin-bottom:0.75rem}
+.proj-metrics{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.75rem}
+.metric{font-size:0.68rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:100px;background:var(--teal-light);color:var(--teal);border:1px solid rgba(13,148,136,0.18)}
+
+/* ─── EDUCATION ─── */
+.edu-list{display:flex;flex-direction:column;gap:0.75rem}
+.edu-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  border:1px solid var(--border);border-radius:var(--r);
+  padding:1.1rem 1.25rem;transition:border-color 0.2s;
+}
+.edu-item:hover{border-color:rgba(217,119,6,0.3)}
+.edu-icon-wrap{
+  width:44px;height:44px;border-radius:var(--r-sm);
+  background:var(--amber-light);border:1px solid rgba(217,119,6,0.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;
+}
+.edu-degree{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.2rem}
+.edu-school{font-size:0.8rem;color:var(--indigo);font-weight:600;margin-bottom:0.3rem}
+.edu-meta{display:flex;gap:1rem;font-size:0.76rem;color:var(--ink3)}
+.edu-gpa{color:var(--amber);font-weight:700}
+
+/* ─── CONTACT FLOAT ─── */
+.contact-bar{
+  background:linear-gradient(135deg,var(--teal) 0%,var(--indigo) 100%);
+  border-radius:var(--r-xl);padding:2rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  flex-wrap:wrap;margin-bottom:2rem;
+  box-shadow:0 8px 30px rgba(13,148,136,0.25);
+}
+.contact-bar-left{}
+.contact-bar-title{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:0.25rem;letter-spacing:-0.02em}
+.contact-bar-sub{font-size:0.85rem;color:rgba(255,255,255,0.75)}
+.contact-bar-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:0.6rem 1.3rem;border-radius:100px;
+  font-weight:700;font-size:0.82rem;
+  transition:transform 0.15s,opacity 0.2s;
+}
+.cta-btn:hover{transform:translateY(-1px);opacity:0.9}
+.cta-btn.white{background:#fff;color:var(--teal)}
+.cta-btn.ghost{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3)}
+
+/* ─── FOOTER ─── */
+footer{text-align:center;padding:2rem;font-size:0.8rem;color:var(--ink3)}
+footer span{color:var(--teal);font-weight:600}
+
+@media(max-width:900px){
+  .page{grid-template-columns:1fr;padding:1rem}
+  .sidebar{position:static}
+  .skills-grid,.proj-grid{grid-template-columns:1fr}
+  .hero-stats-row{gap:0}
+  .hstat{padding:0 0.75rem}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero-banner{padding:1.5rem}
+  .section-card{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Harshini KR</div>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="mailto:hkulanda@asu.edu" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+    <div class="profile-card">
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <div class="avatar-inner">HK</div>
+        </div>
+        <div class="avail-dot" title="Available for work"></div>
+      </div>
+      <div class="profile-name">Harshini KR</div>
+      <div class="profile-role">Backend &amp; Cloud Engineer</div>
+      <div class="profile-loc">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Phoenix, AZ
+      </div>
+
+      <div class="profile-links">
+        <a href="https://www.linkedin.com/in/harshini-k-r-2173191ab/" target="_blank" class="social-btn" title="LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#0a66c2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:hkulanda@asu.edu" class="social-btn" title="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#e85d4a" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="GitHub">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#1a1a2e"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-title">At a Glance</div>
+      <div class="quick-stats">
+        <div class="qstat">
+          <span class="qstat-label">Experience</span>
+          <span class="qstat-val">3.5+ Years</span>
+        </div>
+        <div class="qstat">
+          <span class="qstat-label">MS GPA (ASU)</span>
+          <span class="qstat-val">3.9 / 4.0</span>
+        </div>
+        <div class="qstat">
+          <span class="qstat-label">Users Served</span>
+          <span class="qstat-val">50K+ MAU</span>
+        </div>
+        <div class="qstat">
+          <span class="qstat-label">Uptime SLA</span>
+          <span class="qstat-val">99.9%</span>
+        </div>
+        <div class="qstat">
+          <span class="qstat-label">Status</span>
+          <span class="qstat-val" style="color:#22c55e">Open to Work</span>
+        </div>
+      </div>
+
+      <a href="mailto:hkulanda@asu.edu" class="resume-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Contact Me
+      </a>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <main>
+
+    <!-- HERO -->
+    <div class="hero-banner">
+      <div class="hero-greeting">
+        <span class="wave">👋</span>
+        <span class="hero-greeting-text">Hey there, I'm</span>
+      </div>
+      <h1 class="hero-title">Harshini <span>Kulandaisamy</span> Ramesh</h1>
+      <p class="hero-sub">Backend Engineer · Cloud Architect · Python &amp; AWS Specialist</p>
+      <p class="hero-summary">
+        Software Engineer with <strong>3.5+ years</strong> delivering production-grade REST APIs, microservices,
+        and cloud-native systems for <strong>Fortune 500 clients</strong> — Citibank, Cigna, Anthem —
+        in <strong>HIPAA and SOC-2 regulated environments</strong>.
+        MS Software Engineering, ASU (GPA 3.9, May 2026). OPT eligible · STEM extension eligible.
+      </p>
+      <div class="hero-badges">
+        <span class="hbadge teal">Python · Flask · FastAPI</span>
+        <span class="hbadge indigo">AWS · Terraform · Docker</span>
+        <span class="hbadge coral">HIPAA · SOC-2 Compliant</span>
+        <span class="hbadge amber">50K+ Users · 99.9% Uptime</span>
+        <span class="hbadge violet">OPT Eligible · STEM Extension</span>
+      </div>
+      <div class="hero-stats-row">
+        <div class="hstat">
+          <div class="hstat-num">3.5+</div>
+          <div class="hstat-label">Yrs Experience</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">99.9%</div>
+          <div class="hstat-label">Uptime SLA</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">50K+</div>
+          <div class="hstat-label">Monthly Users</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">35%</div>
+          <div class="hstat-label">Latency Reduced</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">3.9</div>
+          <div class="hstat-label">GPA at ASU</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section-card" id="experience">
+      <div class="section-head">
+        <div class="section-icon exp">💼</div>
+        <div class="section-title-text">Work Experience</div>
+      </div>
+      <div class="exp-list">
+
+        <div class="exp-item open">
+          <div class="exp-header-row" onclick="this.parentElement.classList.toggle('open')">
+            <div class="exp-left">
+              <div class="exp-logo" style="background:#ccfbf1">🏦</div>
+              <div class="exp-title-block">
+                <div class="exp-role-name">Software Engineer – Backend &amp; Cloud</div>
+                <div class="exp-company-name">Virtusa · Citibank &nbsp;|&nbsp; Chennai, India</div>
+              </div>
+            </div>
+            <div class="exp-right">
+              <div class="exp-date-badge">Feb 2023 – Aug 2024</div>
+              <span class="exp-chevron">▾</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Designed <strong>8+ Python/Flask microservices</strong> for a banking portal (50K+ MAU), maintaining <strong>99.9% uptime</strong> via AWS EC2 auto-scaling and SOC-2-compliant infrastructure — zero security incidents in 18 months.</li>
+              <li>Reduced API latency <strong>~35%</strong> via PostgreSQL query optimization, Redis caching, and connection pooling; drove <strong>25% increase in user engagement</strong> with sub-200ms SLAs.</li>
+              <li>Built CI/CD pipelines (GitHub Actions + Jenkins) cutting release cycles from ~4 hrs to <strong>90 min</strong> across 6+ production releases.</li>
+            </ul>
+            <div class="exp-pills">
+              <span class="pill teal">Python</span><span class="pill teal">Flask</span><span class="pill indigo">AWS EC2/S3/RDS</span><span class="pill indigo">PostgreSQL</span><span class="pill coral">Redis</span><span class="pill amber">GitHub Actions</span><span class="pill amber">Jenkins</span><span class="pill violet">SOC-2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header-row" onclick="this.parentElement.classList.toggle('open')">
+            <div class="exp-left">
+              <div class="exp-logo" style="background:#eef2ff">🏥</div>
+              <div class="exp-title-block">
+                <div class="exp-role-name">Associate Software Engineer – Backend</div>
+                <div class="exp-company-name">Virtusa · Cigna Healthcare &nbsp;|&nbsp; Chennai, India</div>
+              </div>
+            </div>
+            <div class="exp-right">
+              <div class="exp-date-badge">Aug 2022 – Jan 2023</div>
+              <span class="exp-chevron">▾</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Engineered Python backend services in a <strong>HIPAA-regulated</strong> environment, processing <strong>100K+ monthly</strong> member eligibility and provider transactions with field-level data security.</li>
+              <li>Grew automated test coverage from <strong>15% → 70% (Pytest)</strong>, reducing production regression incidents ~40%; automated ETL workflows cutting manual validation ~30%.</li>
+            </ul>
+            <div class="exp-pills">
+              <span class="pill teal">Python</span><span class="pill coral">HIPAA</span><span class="pill indigo">Pytest</span><span class="pill amber">ETL</span><span class="pill indigo">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header-row" onclick="this.parentElement.classList.toggle('open')">
+            <div class="exp-left">
+              <div class="exp-logo" style="background:#fff1f2">🛡️</div>
+              <div class="exp-title-block">
+                <div class="exp-role-name">Associate Software Engineer</div>
+                <div class="exp-company-name">Virtusa · Anthem &nbsp;|&nbsp; Chennai, India</div>
+              </div>
+            </div>
+            <div class="exp-right">
+              <div class="exp-date-badge">Aug 2021 – Jul 2022</div>
+              <span class="exp-chevron">▾</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Integrated REST APIs across <strong>5+ insurance systems</strong>, cutting inter-system latency ~25% and response time ~30%.</li>
+              <li>Implemented Jenkins CI/CD reducing manual deployment by <strong>40%</strong> with PII security controls; migrated 2 legacy services to AWS (EC2, S3).</li>
+            </ul>
+            <div class="exp-pills">
+              <span class="pill teal">REST APIs</span><span class="pill amber">Jenkins</span><span class="pill indigo">AWS</span><span class="pill violet">PII Security</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header-row" onclick="this.parentElement.classList.toggle('open')">
+            <div class="exp-left">
+              <div class="exp-logo" style="background:#fffbeb">⚡</div>
+              <div class="exp-title-block">
+                <div class="exp-role-name">Software Engineer Intern</div>
+                <div class="exp-company-name">Virtusa &nbsp;|&nbsp; Chennai, India</div>
+              </div>
+            </div>
+            <div class="exp-right">
+              <div class="exp-date-badge">Jan 2021 – Jul 2021</div>
+              <span class="exp-chevron">▾</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Gained foundational Python, REST API, and QA testing experience across 2 production deployments in an Agile team.</li>
+            </ul>
+            <div class="exp-pills">
+              <span class="pill teal">Python</span><span class="pill indigo">REST APIs</span><span class="pill amber">QA Testing</span><span class="pill violet">Agile/Scrum</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section-card" id="skills">
+      <div class="section-head">
+        <div class="section-icon skills">⚡</div>
+        <div class="section-title-text">Skills</div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">🐍</span><span class="skill-block-name">Languages</span></div>
+          <div class="skill-tags">
+            <span class="pill teal">Python</span><span class="pill teal">Java</span><span class="pill teal">JavaScript</span><span class="pill teal">SQL</span><span class="pill teal">Kotlin</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">⚙️</span><span class="skill-block-name">Backend &amp; APIs</span></div>
+          <div class="skill-tags">
+            <span class="pill indigo">Flask</span><span class="pill indigo">FastAPI</span><span class="pill indigo">Spring Boot</span><span class="pill indigo">REST APIs</span><span class="pill indigo">Microservices</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">☁️</span><span class="skill-block-name">Cloud &amp; DevOps</span></div>
+          <div class="skill-tags">
+            <span class="pill amber">AWS EC2</span><span class="pill amber">Lambda</span><span class="pill amber">S3/RDS</span><span class="pill amber">API Gateway</span><span class="pill amber">Docker</span><span class="pill amber">Terraform</span><span class="pill amber">GitHub Actions</span><span class="pill amber">Jenkins</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">🗄️</span><span class="skill-block-name">Databases</span></div>
+          <div class="skill-tags">
+            <span class="pill violet">PostgreSQL</span><span class="pill violet">MySQL</span><span class="pill violet">MongoDB</span><span class="pill violet">Redis</span><span class="pill violet">DynamoDB</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">🤖</span><span class="skill-block-name">AI / ML</span></div>
+          <div class="skill-tags">
+            <span class="pill coral">OpenAI API</span><span class="pill coral">XGBoost</span><span class="pill coral">scikit-learn</span><span class="pill coral">SHAP</span><span class="pill coral">Pandas</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="skill-block-icon">🧪</span><span class="skill-block-name">Testing &amp; Compliance</span></div>
+          <div class="skill-tags">
+            <span class="pill rose">Pytest</span><span class="pill rose">JUnit</span><span class="pill rose">HIPAA</span><span class="pill rose">SOC-2</span><span class="pill rose">Agile/Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-card" id="projects">
+      <div class="section-head">
+        <div class="section-icon proj">🚀</div>
+        <div class="section-title-text">Projects</div>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-img"><div class="proj-img-bg c1">☁️</div></div>
+          <div class="proj-body">
+            <div class="proj-type">Serverless · Healthcare · 2026</div>
+            <div class="proj-name">CloudClaim — Serverless Claims Pipeline</div>
+            <div class="proj-desc">Event-driven serverless pipeline (S3 → Lambda → SQS → DynamoDB) with fault-tolerant, zero-data-loss processing. HIPAA-aligned IAM policies + AES-256 encrypted storage.</div>
+            <div class="proj-metrics">
+              <span class="metric">1,000+ claims validated</span>
+              <span class="metric">Zero data loss</span>
+              <span class="metric">HIPAA-aligned</span>
+            </div>
+            <div class="exp-pills">
+              <span class="pill teal">Python</span><span class="pill indigo">AWS Lambda</span><span class="pill indigo">SQS</span><span class="pill indigo">DynamoDB</span><span class="pill amber">Terraform</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-img"><div class="proj-img-bg c2">📱</div></div>
+          <div class="proj-body">
+            <div class="proj-type">ML + LLM · Android · 2026</div>
+            <div class="proj-name">CAR — Contextual Auto-Response App</div>
+            <div class="proj-desc">Real-time context engine collecting 33+ device signals. Hybrid XGBoost + GPT-4o mini pipeline with sub-10s latency for SMS/WhatsApp autoreply. Privacy-preserving on-device storage.</div>
+            <div class="proj-metrics">
+              <span class="metric">33+ device signals</span>
+              <span class="metric">Sub-10s latency</span>
+              <span class="metric">On-device privacy</span>
+            </div>
+            <div class="exp-pills">
+              <span class="pill teal">Python</span><span class="pill violet">XGBoost</span><span class="pill violet">GPT-4o mini</span><span class="pill indigo">Kotlin</span><span class="pill coral">Flask</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section-card" id="education">
+      <div class="section-head">
+        <div class="section-icon edu">🎓</div>
+        <div class="section-title-text">Education</div>
+      </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-icon-wrap">🎓</div>
+          <div>
+            <div class="edu-degree">Master of Science in Software Engineering</div>
+            <div class="edu-school">Arizona State University, Tempe, AZ</div>
+            <div class="edu-meta"><span>2024 – 2026</span><span class="edu-gpa">GPA 3.9 / 4.0</span></div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon-wrap">🏛️</div>
+          <div>
+            <div class="edu-degree">Bachelor of Technology in Information Technology</div>
+            <div class="edu-school">Sri Krishna College of Engineering and Technology, Coimbatore, India</div>
+            <div class="edu-meta"><span>2016 – 2020</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT BANNER -->
+    <div class="contact-bar">
+      <div class="contact-bar-left">
+        <div class="contact-bar-title">Let's build something great together 🚀</div>
+        <div class="contact-bar-sub">Available immediately · OPT eligible · STEM extension · Open to relocation</div>
+      </div>
+      <div class="contact-bar-actions">
+        <a href="mailto:hkulanda@asu.edu" class="cta-btn white">
+          ✉️ Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/harshini-k-r-2173191ab/" target="_blank" class="cta-btn ghost">
+          LinkedIn →
+        </a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>Designed &amp; built by <span>Harshini Kulandaisamy Ramesh</span> · Phoenix, AZ · 2026</p>
+</footer>
+
+<script>
+document.querySelectorAll('.exp-header-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    const item=row.parentElement;
+    document.querySelectorAll('.exp-item').forEach(i=>{if(i!==item)i.classList.remove('open')});
+    item.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
