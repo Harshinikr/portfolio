@@ -14,4 +14,4 @@ Python · Flask · AWS · PostgreSQL · Redis · Terraform · Docker
 
 ## Contact
 📧 hkulanda@asu.edu  
-🔗 linkedin.com/in/harshini-k-r-2173191ab
+🔗 https://www.linkedin.com/in/harshini-k-r-2173191ab/ 
